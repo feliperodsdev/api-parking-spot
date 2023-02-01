@@ -5,6 +5,8 @@ import com.api.parkingcontrol.repositories.ParkingSpotRepository;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class ParkingSpotService {
@@ -34,6 +36,10 @@ public class ParkingSpotService {
 
     public List<ParkingSpotModel> getAll(){
         return parkingSpotRepository.findAll();
+    }
+
+    public Optional<ParkingSpotModel> findById(Integer id){
+        return parkingSpotRepository.findById(id);
     }
 
 }

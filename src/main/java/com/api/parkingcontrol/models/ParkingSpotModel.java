@@ -11,8 +11,8 @@ public class ParkingSpotModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer id;
     @Column(nullable = false, unique = true, length = 10)
     private String parkingSpotNumber;
     @Column(nullable = false, unique = true, length = 7)
@@ -32,11 +32,11 @@ public class ParkingSpotModel implements Serializable {
     @Column(nullable = false, length = 30)
     private String block;
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
